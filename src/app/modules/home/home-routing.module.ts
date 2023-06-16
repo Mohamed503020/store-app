@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeLandpageComponent } from './components/home-landpage/home-landpage.component';
 
 const routes: Routes = [
-  {path:'',component:HomeLandpageComponent,    children: [
+  {path:'',component:HomeLandpageComponent },
     {
       path: 'jobs',
       loadChildren: () => import('./jobs/jobs.module').then(m => m.JobsModule)
@@ -13,7 +13,7 @@ const routes: Routes = [
       loadChildren: () => import('./store/store.module').then(m => m.StoreModule)
     },
 
-  ]}
+
 ];
 
 @NgModule({
