@@ -2,16 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
-import { HomeLandpageComponent } from './components/home-landpage/home-landpage.component';
+import { HomeLandpageComponent } from './home-landpage/home-landpage.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
   declarations: [
-    HomeLandpageComponent
+    HomeLandpageComponent,
+    HomeComponent,
+
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    SharedModule
   ]
 })
 export class HomeModule { }

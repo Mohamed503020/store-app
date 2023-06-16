@@ -2,16 +2,25 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { JobsRoutingModule } from './jobs-routing.module';
-import { JobsLandpageComponent } from './components/jobs-landpage/jobs-landpage.component';
+import { JobsLandpageComponent } from './jobs-landpage/jobs-landpage.component';
+import { HeaderComponent } from 'src/app/shared/components/header/header.component';
+import { JobsComponent } from './pages/jobs/jobs.component';
+import { ApplayJobComponent } from './pages/applay-job/applay-job.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    JobsLandpageComponent
+    JobsLandpageComponent,
+    JobsComponent,
+    ApplayJobComponent,
   ],
   imports: [
     CommonModule,
-    JobsRoutingModule
+    JobsRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
   ]
 })
 export class JobsModule { }

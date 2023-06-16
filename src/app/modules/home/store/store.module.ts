@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { StoreRoutingModule } from './store-routing.module';
-import { StoreLandpageComponent } from './components/store-landpage/store-landpage.component';
+import { StoreLandpageComponent } from './store-landpage/store-landpage.component';
+import { StoreHomeComponent } from './pages/store-home/store-home.component';
 
 
 @NgModule({
   declarations: [
-    StoreLandpageComponent
+    StoreLandpageComponent,
+    StoreHomeComponent
   ],
   imports: [
     CommonModule,

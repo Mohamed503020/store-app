@@ -1,0 +1,134 @@
+<div class="mt-4 mb-4 w-100 text-center">
+  <h6>
+    استمارة طلب توظيف
+    <!-- <span class="block mt-2">( {{jobInfo.name}} )</span> -->
+  </h6>
+</div>
+<form [formGroup]="applyForm"class="d-flex justify-content-between text" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="id">id:</label>
+    <input  class="form-control"  type="text" formControlName="id" id="id">
+  </div>
+  <div class="form-group">
+    <label for="password">name:</label>
+    <input  class="form-control"  type="text" formControlName="name" id="name">
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input class="form-control" type="email" formControlName="email" id="email">
+  </div>
+  <div class="form-group">
+    <label for="password">q-degree:</label>
+    <input  class="form-control"  type="text" formControlName="q_degree" id="q_degree">
+  </div>
+
+
+  <div class="form-group">
+    <label for="password">exp:</label>
+    <input  class="form-control"  type="number" formControlName="exp" id="exp">
+  </div>
+  <div class="form-group">
+    <label for="password">t5asos:</label>
+    <input  class="form-control"  type="text" formControlName="t5asos" id="t5asos">
+  </div>
+
+  <!-- <div class="form-group">
+    <label for="job">Select job:</label>
+    <select class="form-control" formControlName="job" id="job">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
+  </div> -->
+  <div class="form-group">
+    <label for="jobs">اختر وظيفة</label>
+    <select class="form-control" id="jobs" formControlName="jobs">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="country">Select country:</label>
+    <select class="form-control" id="country" formControlName="country">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="city">Select city:</label>
+    <select class="form-control" id="city" formControlName="city">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="town">Select town:</label>
+    <select class="form-control" id="town" formControlName="town">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
+  </div>
+  <!-- <div class="form-group">
+    <label for="password">job:</label>
+    <input  class="form-control"  type="text" formControlName="job" id="job">
+  </div> -->
+    <!-- <div class="form-group">
+    <label for="password">job:</label>
+    <input  class="form-control"  type="text" formControlName="job" id="job">
+  </div> -->
+    <!-- <div class="form-group">
+    <label for="password">job:</label>
+    <input  class="form-control"  type="text" formControlName="job" id="job">
+  </div> -->
+    <!-- <div class="form-group">
+    <label for="password">job:</label>
+    <input  class="form-control"  type="text" formControlName="job" id="job">
+  </div> -->
+  <div class="form-group">
+    <label for="bdate">birth date:</label>
+    <input  class="form-control"  type="date" formControlName="bdate" id="bdate">
+  </div>
+  <div class="form-group">
+    <label for="mobile">mobile:</label>
+    <input  class="form-control"  type="text" formControlName="mobile" id="mobile">
+  </div>
+  <div class="form-group">
+    <label for="address">address:</label>
+    <input  class="form-control"  type="text" formControlName="address" id="address">
+  </div>
+  <div class="form-group">
+    <label for="attachment">attachment:</label>
+    <input  class="form-control"  type="text" formControlName="attachment" id="attachment">
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="w-100 text-center mt-5">
+  <button type="button" class="submit btn btn-success w-50" [disabled]="applyForm.invalid">apply</button>
+
+</div>
+
+</form>
