@@ -3,11 +3,18 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "candles-website": {
+    "scorp-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
         }
       },
       "root": "",
@@ -15,11 +22,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/candles-website",
+            "outputPath": "dist/scorp-app",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -30,10 +37,23 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+            "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"   ,
+              "src/styles.scss",                                                                                                                                             "src/styles.scss",
+              {
+                "input": "./src/scss/themes/theme-light.scss",
+                "inject": false,
+                "bundleName": "theme-light"
+              },
+              {
+                "input":  "./src/scss/themes/theme-dark.scss",
+                "inject": false,
+                "bundleName": "theme-dark"
+              }
             ],
-            "scripts": [ "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
+            "scripts": [  "node_modules/bootstrap/dist/js/bootstrap.min.js"]
+
           },
           "configurations": {
             "production": {
@@ -52,18 +72,9 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.development.ts"
-                }
-              ]
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -72,10 +83,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "candles-website:build:production"
+              "buildTarget": "scorp-app:build:production"
             },
             "development": {
-              "browserTarget": "candles-website:build:development"
+              "buildTarget": "scorp-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +94,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "candles-website:build"
+            "buildTarget": "scorp-app:build"
           }
         },
         "test": {
@@ -100,15 +111,29 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+            "node_modules/bootstrap/dist/css/bootstrap.min.css",
+            "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "src/styles.scss",
+              {
+                "input": "src/scss/themes/theme-light.scss",
+                "inject": false,
+                "bundleName": "theme-light"
+              },
+              {
+                "input": "src/scss/themes/theme-dark.scss",
+                "inject": false,
+                "bundleName": "theme-dark"
+              }
             ],
-            "scripts": []
+            "scripts": [  "node_modules/bootstrap/dist/js/bootstrap.min.js"]
+
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": "c5eb6323-4260-4f07-b850-ab891ad9be22"
+    "analytics": false
   }
 }
